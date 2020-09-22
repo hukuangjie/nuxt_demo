@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>hukkk</h2>
     <Nuxt />
   </div>
 </template>

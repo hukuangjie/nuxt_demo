@@ -1,23 +1,29 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <ul>
-        <li> <nuxt-link :to="{name:'about'}">about</nuxt-link> </li>
-        <li> <nuxt-link :to="{name:'news'}">news</nuxt-link> </li>
-      </ul>
-      <h1 class="title">
-        nuxt_demo {{ $route.params.xxid }}
-      </h1>
+      <div class="diss">
+        <!-- <img src="~static/icon.png" alt /> -->
+      </div>
+      <h1 class="title">nuxt.js 也就那么回事 {{ $route.params.xxid }}</h1>
       <div class="links">
-
+        <li>
+          <nuxt-link :to="{name:'about'}">about</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link :to="{name:'news',params:{
+          newsID:10080
+        }}">news</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link :to="{name:'asyncData'}">asyncData</nuxt-link>
+        </li>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
 <style>
@@ -29,31 +35,20 @@ export default {}
   align-items: center;
   text-align: center;
 }
+.diss {
+  width: 300px;
+  height: auto;
+  background-image: url('~static/icon.png');
+}
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
 }
 
 .links {
